@@ -16,6 +16,7 @@ This project implements logistic regression for binary classification to predict
 ├── README.md
 ├── heart_disease_lr_analysis.ipynb    # Main analysis notebook
 ├── Heart_Disease_Prediction.csv       # Dataset
+├── model_params.json                   # Exported model parameters
 └── screenshots/                        # SageMaker evidence (to be added)
 ```
 
@@ -62,14 +63,29 @@ This project implements logistic regression for binary classification to predict
 - Gradient descent optimization
 - Evaluation metrics (Accuracy, Precision, Recall, F1-Score)
 
-### Results (Preliminary)
+### Step 3: Decision Boundaries
+- 2D model training for feature pairs
+- Visualization of decision boundaries
+- Analysis of class separability
+
+### Step 4: Regularization (L2)
+- L2 penalty implementation
+- Lambda tuning (0, 0.01, 0.1, 1, 10)
+- Weight magnitude comparison
+
+### Step 5: SageMaker Deployment
+- Model export to JSON
+- Inference function for endpoint
+- Sample prediction demonstration
+
+### Results
 
 | Metric | Training | Test |
 |--------|----------|------|
-| Accuracy | 81.5% | 69.1% |
-| Precision | 79.5% | 69.0% |
-| Recall | 78.6% | 55.6% |
-| F1-Score | 79.0% | 61.5% |
+| Accuracy | ~81% | ~69% |
+| Precision | ~80% | ~69% |
+| Recall | ~79% | ~56% |
+| F1-Score | ~79% | ~62% |
 
 ## Libraries Used
 
@@ -89,11 +105,19 @@ This project implements logistic regression for binary classification to predict
 
 ## AWS SageMaker Execution Evidence
 
-TODO
+The notebook was executed in AWS SageMaker.
+
 
 ### Screenshots
 
+#### 1. SageMaker Notebook Instance Running
+![SageMaker Notebook Instance](screenshots/SageMaker_Notebook_Instance.png)
 
+#### 2. Training Metrics and Results
+![Training Metrics](screenshots/SageMaker_Training_Metrics.png)
+
+#### 3. Inference Test Output
+![Inference Test](screenshots/SageMaker_Inference_Test.png)
 
 ---
 
@@ -101,6 +125,6 @@ TODO
 
 - [x] Step 1: Load and Prepare Dataset
 - [x] Step 2: Implement Basic Logistic Regression
-- [ ] Step 3: Visualize Decision Boundaries
-- [ ] Step 4: Regularization (L2)
-- [ ] Step 5: SageMaker Deployment
+- [x] Step 3: Visualize Decision Boundaries
+- [x] Step 4: Regularization (L2)
+- [x] Step 5: SageMaker Deployment
